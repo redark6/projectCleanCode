@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Code {
-	
-	public static int NUMBERS_IN_CODE = 9;
-	
+		
 	private String code;
 	private ChecksumCodeStatusDictionary codeStatus;
 	
@@ -33,8 +31,8 @@ public class Code {
 	public double computeChecksum() {
 		if(!this.code.contains("?")) {
 			int sum = 0;
-			for (int numberPosition = 0; numberPosition < Code.NUMBERS_IN_CODE; numberPosition++) {
-				sum += ( Code.NUMBERS_IN_CODE - numberPosition ) * Character.getNumericValue(this.code.charAt(numberPosition));
+			for (int numberPosition = 0; numberPosition < FaxNumberDictionary.NUMBERS_IN_CODE; numberPosition++) {
+				sum += ( FaxNumberDictionary.NUMBERS_IN_CODE - numberPosition ) * Character.getNumericValue(this.code.charAt(numberPosition));
 			}
 			return sum % 11;
 		}else {

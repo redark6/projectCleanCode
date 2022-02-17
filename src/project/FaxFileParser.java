@@ -27,7 +27,7 @@ public class FaxFileParser {
 	public Code parseFaxFileFaxPresentationToCode(char[][] faxCode) {
 		String translatedCode = "";
 		String numberFromFaxRepresentation = "";
-		for (int numberAtPosition = 0; numberAtPosition < Code.NUMBERS_IN_CODE; numberAtPosition++) {
+		for (int numberAtPosition = 0; numberAtPosition < FaxNumberDictionary.NUMBERS_IN_CODE; numberAtPosition++) {
 			for (int charHeightPositionInArray = 0; charHeightPositionInArray < FaxNumberDictionary.FAX_NUMBER_ARRAY_HEIGHT; charHeightPositionInArray++) {
 				numberFromFaxRepresentation += String.valueOf(Arrays.copyOfRange(faxCode[charHeightPositionInArray], numberAtPosition * FaxNumberDictionary.FAX_NUMBER_ARRAY_WIDTH, ((numberAtPosition + 1 ) * FaxNumberDictionary.FAX_NUMBER_ARRAY_WIDTH)));
 			}

@@ -19,16 +19,16 @@ public class FileTranscriptor {
         Reader fileReader = new FileReader(file);
         BufferedReader br = new BufferedReader(fileReader);
         
-        char[][] currentFaxCode = new char[3][27];
+        char[][] currentFaxCode = new char[FaxNumberDictionary.CODE_REPRESENTATION_LINE_FILE_HEIGHT][FaxNumberDictionary.CODE_REPRESENTATION_LINE_FILE_LENGTH];
         int currentFaxCodeLine = 0;
         
         while((line = br.readLine()) != null) {
-        	if(currentFaxCodeLine < 3) {
-        		line.getChars(0, 27, currentFaxCode[currentFaxCodeLine], 0);
+        	if(currentFaxCodeLine < FaxNumberDictionary.CODE_REPRESENTATION_LINE_FILE_HEIGHT) {
+        		line.getChars(0, FaxNumberDictionary.CODE_REPRESENTATION_LINE_FILE_LENGTH, currentFaxCode[currentFaxCodeLine], 0);
         		currentFaxCodeLine++;
         	}else {
         		faxCodes.add(currentFaxCode);
-        		currentFaxCode = new char[3][27];
+        		currentFaxCode = new char[FaxNumberDictionary.CODE_REPRESENTATION_LINE_FILE_HEIGHT][FaxNumberDictionary.CODE_REPRESENTATION_LINE_FILE_LENGTH];
         		currentFaxCodeLine = 0;
         	}
         }

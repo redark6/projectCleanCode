@@ -56,6 +56,11 @@ public enum FaxNumberDictionary {
 	public static int FAX_NUMBER_ARRAY_HEIGHT = 3;
 	public static int FAX_NUMBER_ARRAY_WIDTH = 3;
 	
+	public static int NUMBERS_IN_CODE = 9;
+	
+	public static int CODE_REPRESENTATION_LINE_FILE_LENGTH = NUMBERS_IN_CODE * FAX_NUMBER_ARRAY_WIDTH;
+	public static int CODE_REPRESENTATION_LINE_FILE_HEIGHT = 3;
+	
 	private String value;
 	private String valueFaxRepresentation;
 	
